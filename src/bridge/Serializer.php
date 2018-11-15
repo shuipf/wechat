@@ -1,4 +1,11 @@
 <?php
+// +----------------------------------------------------------------------
+// | Serializer
+// +----------------------------------------------------------------------
+// | Copyright (c) 2019 http://www.shuipf.com, All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: 水平凡 <admin@abc3210.com>
+// +----------------------------------------------------------------------
 
 namespace shuipf\wechat\bridge;
 
@@ -8,7 +15,10 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 class Serializer
 {
     /**
-     * json encode.
+     * json 编码
+     * @param string|array $data 需要编码的数据
+     * @param array $context
+     * @return bool|false|float|int|string
      */
     public static function jsonEncode($data, array $context = [])
     {
@@ -22,7 +32,10 @@ class Serializer
     }
 
     /**
-     * json decode.
+     * json 解码
+     * @param string $data json数据
+     * @param array $context
+     * @return mixed
      */
     public static function jsonDecode($data, array $context = [])
     {
@@ -36,7 +49,10 @@ class Serializer
     }
 
     /**
-     * xml encode.
+     * xml 编码
+     * @param $data
+     * @param array $context
+     * @return bool|float|int|string
      */
     public static function xmlEncode($data, array $context = [])
     {
@@ -52,7 +68,10 @@ class Serializer
     }
 
     /**
-     * xml decode.
+     * xml 解码
+     * @param $data
+     * @param array $context
+     * @return array|mixed|string
      */
     public static function xmlDecode($data, array $context = [])
     {
@@ -60,7 +79,9 @@ class Serializer
     }
 
     /**
-     * xml/json to array.
+     * xml/json to array
+     * @param $string
+     * @return array
      */
     public static function parse($string)
     {
@@ -71,12 +92,13 @@ class Serializer
         } else {
             throw new \InvalidArgumentException(sprintf('Unable to parse: %s', (string) $string));
         }
-
         return (array) $result;
     }
 
     /**
-     * check is json string.
+     * 是否json数据
+     * @param string $data
+     * @return bool
      */
     public static function isJSON($data)
     {
@@ -84,12 +106,13 @@ class Serializer
     }
 
     /**
-     * check is xml string.
+     * 是否xml数据
+     * @param $data
+     * @return bool
      */
     public static function isXML($data)
     {
         $xml = @simplexml_load_string($data);
-
         return $xml instanceof \SimpleXmlElement;
     }
 }
