@@ -21,7 +21,8 @@ class Util
     }
 
     /**
-     * 获取当前 URL.
+     * 获取当前URL
+     * @return string
      */
     public static function getCurrentUrl()
     {
@@ -44,7 +45,9 @@ class Util
     }
 
     /**
-     * 获取随机字符.
+     * 获取随机字符
+     * @param int $length 长度
+     * @return bool|string
      */
     public static function getRandomString($length = 10)
     {
