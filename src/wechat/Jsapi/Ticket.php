@@ -1,7 +1,16 @@
 <?php
+// +----------------------------------------------------------------------
+// | Ticket
+// | https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
+// +----------------------------------------------------------------------
+// | Copyright (c) 2019 http://www.shuipf.com, All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: 水平凡 <admin@abc3210.com>
+// +----------------------------------------------------------------------
 
 namespace shuipf\wechat\wechat\Jsapi;
 
+use shuipf\wechat\bridge\AccessTokenTrait;
 use shuipf\wechat\bridge\Http;
 use shuipf\wechat\bridge\CacheTrait;
 use shuipf\wechat\wechat\AccessToken;
@@ -11,56 +20,45 @@ class Ticket
     /*
      * Cache Trait
      */
-    use CacheTrait;
+    use CacheTrait,AccessTokenTrait;
 
     /**
-     * @see http://mp.weixin.qq.com/wiki/11/74ad127cc054f6b80759c40f77ec03db.html（附录 1）.
+     * @see https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
      */
     const JSAPI_TICKET = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket';
 
     /**
-     * shuipf\wechat\Wechat\AccessToken.
-     */
-    protected $accessToken;
-
-    /**
-     * 构造方法.
+     * 构造方法
+     * Ticket constructor.
+     * @param AccessToken $accessToken
      */
     public function __construct(AccessToken $accessToken)
     {
-        $this->accessToken = $accessToken;
+        $this->setAccessToken($accessToken);
     }
 
     /**
-     * 获取 AccessToken.
-     */
-    public function getAccessToken()
-    {
-        return $this->accessToken;
-    }
-
-    /**
-     * 获取 Jsapi 票据（调用缓存，返回 String）.
+     * 获取 Jsapi 票据（调用缓存，返回 String）
+     * @return string
+     * @throws \Exception
      */
     public function getTicketString()
     {
         $cacheId = $this->getCacheId();
-
         if ($this->cache && $data = $this->cache->fetch($cacheId)) {
             return $data['ticket'];
         }
-
         $response = $this->getTicketResponse();
-
         if ($this->cache) {
             $this->cache->save($cacheId, $response, $response['expires_in']);
         }
-
         return $response['ticket'];
     }
 
     /**
-     * 获取 Jsapi 票据（不缓存，返回原始数据）.
+     * 通过接口直接获取 Jsapi 票据
+     * @return \Doctrine\Common\Collections\ArrayCollection|string
+     * @throws \Exception
      */
     public function getTicketResponse()
     {
@@ -68,26 +66,16 @@ class Ticket
             ->withAccessToken($this->accessToken)
             ->withQuery(['type' => 'jsapi'])
             ->send();
-
+        //是否有错误
         if (0 != $response['errcode']) {
             throw new \Exception($response['errmsg'], $response['errcode']);
         }
-
         return $response;
     }
 
     /**
-     * 从缓存中清除.
-     */
-    public function clearFromCache()
-    {
-        return $this->cache
-            ? $this->cache->delete($this->getCacheId())
-            : false;
-    }
-
-    /**
-     * 获取缓存 ID.
+     * 获取缓存 ID
+     * @return string
      */
     public function getCacheId()
     {
