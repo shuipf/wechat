@@ -1,8 +1,8 @@
 <?php
 
-namespace Thenbsp\Wechat\Event\Event;
+namespace Shuipf\Wechat\Event\Event;
 
-use Thenbsp\Wechat\Event\Event;
+use Shuipf\Wechat\Event\Event;
 
 class ScanSubscribed extends Event
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Thenbsp\Wechat\Payment\Jsapi;
+namespace Shuipf\Wechat\Payment\Jsapi;
 
-use Thenbsp\Wechat\Bridge\Util;
-use Thenbsp\Wechat\Bridge\Serializer;
-use Thenbsp\Wechat\Payment\Unifiedorder;
+use Shuipf\Wechat\Bridge\Util;
+use Shuipf\Wechat\Bridge\Serializer;
+use Shuipf\Wechat\Payment\Unifiedorder;
 use Doctrine\Common\Collections\ArrayCollection;
 
 abstract class ConfigGenerator extends ArrayCollection

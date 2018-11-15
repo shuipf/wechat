@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\Bridge;
+namespace Shuipf\Wechat\Bridge;
 
 use GuzzleHttp\Client;
-use Thenbsp\Wechat\Wechat\AccessToken;
+use Shuipf\Wechat\Wechat\AccessToken;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class Http

@@ -1,8 +1,8 @@
 <?php
 
-namespace Thenbsp\Wechat\Payment\Qrcode;
+namespace Shuipf\Wechat\Payment\Qrcode;
 
-use Thenbsp\Wechat\Bridge\Util;
+use Shuipf\Wechat\Bridge\Util;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class Forever extends ArrayCollection

@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\Wechat;
+namespace Shuipf\Wechat\Wechat;
 
-use Thenbsp\Wechat\Bridge\CacheTrait;
-use Thenbsp\Wechat\Wechat\Qrcode\Ticket;
+use Shuipf\Wechat\Bridge\CacheTrait;
+use Shuipf\Wechat\Wechat\Qrcode\Ticket;
 
 class Qrcode
 {
@@ -18,7 +18,7 @@ class Qrcode
     const QRCODE_URL = 'https://mp.weixin.qq.com/cgi-bin/showqrcode';
 
     /**
-     * Thenbsp\Wechat\Wechat\AccessToken.
+     * Shuipf\Wechat\Wechat\AccessToken.
      */
     protected $accessToken;
 

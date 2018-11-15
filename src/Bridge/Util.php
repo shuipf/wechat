@@ -1,6 +1,6 @@
 <?php
 
-namespace Thenbsp\Wechat\Bridge;
+namespace Shuipf\Wechat\Bridge;
 
 class Util
 {

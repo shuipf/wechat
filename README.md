@@ -1,4 +1,4 @@
-> 该项目仅供学习，目录已停止维护，请勿在正式项目中使用。
+> 本项目是源于 http://github.com/thenbsp/wechat ，由于作者暂停维护，自己又经常用到所以就自己修改了。
 
 ### 简介
 
@@ -12,4 +12,4 @@ composer require thenbsp/wechat
 
 ### 文档
 
-文档请移步 [项目 WIKI](https://github.com/thenbsp/wechat/wiki) ，使用前建议先看文档！
+文档请移步 [项目 WIKI](https://github.com/shuipf/wechat/wiki) ，使用前建议先看文档！

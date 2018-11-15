@@ -1,13 +1,13 @@
 <?php
 
-namespace Thenbsp\Wechat\Payment\Qrcode;
+namespace Shuipf\Wechat\Payment\Qrcode;
 
-use Thenbsp\Wechat\Payment\Unifiedorder;
+use Shuipf\Wechat\Payment\Unifiedorder;
 
 class Temporary
 {
     /**
-     * Thenbsp\Wechat\Payment\Unifiedorder.
+     * Shuipf\Wechat\Payment\Unifiedorder.
      */
     protected $unifiedorder;
 

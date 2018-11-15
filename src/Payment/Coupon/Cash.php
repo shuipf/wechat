@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\Payment\Coupon;
+namespace Shuipf\Wechat\Payment\Coupon;
 
-use Thenbsp\Wechat\Bridge\Util;
-use Thenbsp\Wechat\Bridge\Http;
+use Shuipf\Wechat\Bridge\Util;
+use Shuipf\Wechat\Bridge\Http;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

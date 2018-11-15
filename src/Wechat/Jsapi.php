@@ -1,11 +1,11 @@
 <?php
 
-namespace Thenbsp\Wechat\Wechat;
+namespace Shuipf\Wechat\Wechat;
 
-use Thenbsp\Wechat\Bridge\Util;
-use Thenbsp\Wechat\Bridge\CacheTrait;
-use Thenbsp\Wechat\Bridge\Serializer;
-use Thenbsp\Wechat\Wechat\Jsapi\Ticket;
+use Shuipf\Wechat\Bridge\Util;
+use Shuipf\Wechat\Bridge\CacheTrait;
+use Shuipf\Wechat\Bridge\Serializer;
+use Shuipf\Wechat\Wechat\Jsapi\Ticket;
 
 class Jsapi
 {
@@ -15,7 +15,7 @@ class Jsapi
     use CacheTrait;
 
     /**
-     * Thenbsp\Wechat\Wechat\AccessToken.
+     * Shuipf\Wechat\Wechat\AccessToken.
      */
     protected $accessToken;
 

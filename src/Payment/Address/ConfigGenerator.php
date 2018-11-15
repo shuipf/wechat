@@ -1,15 +1,15 @@
 <?php
 
-namespace Thenbsp\Wechat\Payment\Address;
+namespace Shuipf\Wechat\Payment\Address;
 
-use Thenbsp\Wechat\Bridge\Util;
-use Thenbsp\Wechat\Bridge\Serializer;
-use Thenbsp\Wechat\OAuth\AccessToken;
+use Shuipf\Wechat\Bridge\Util;
+use Shuipf\Wechat\Bridge\Serializer;
+use Shuipf\Wechat\OAuth\AccessToken;
 
 class ConfigGenerator
 {
     /**
-     * Thenbsp\Wechat\OAuth\AccessToken.
+     * Shuipf\Wechat\OAuth\AccessToken.
      */
     protected $accessToken;
 

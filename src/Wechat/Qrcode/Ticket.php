@@ -1,10 +1,10 @@
 <?php
 
-namespace Thenbsp\Wechat\Wechat\Qrcode;
+namespace Shuipf\Wechat\Wechat\Qrcode;
 
-use Thenbsp\Wechat\Bridge\Http;
-use Thenbsp\Wechat\Bridge\CacheTrait;
-use Thenbsp\Wechat\Wechat\AccessToken;
+use Shuipf\Wechat\Bridge\Http;
+use Shuipf\Wechat\Bridge\CacheTrait;
+use Shuipf\Wechat\Wechat\AccessToken;
 
 class Ticket
 {
@@ -26,7 +26,7 @@ class Ticket
     const QR_LIMIT_STR_SCENE = 'QR_LIMIT_STR_SCENE';
 
     /**
-     * Thenbsp\Wechat\Wechat\AccessToken.
+     * Shuipf\Wechat\Wechat\AccessToken.
      */
     protected $accessToken;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Thenbsp\Wechat\Wechat\Jsapi;
+namespace Shuipf\Wechat\Wechat\Jsapi;
 
-use Thenbsp\Wechat\Bridge\Http;
-use Thenbsp\Wechat\Bridge\CacheTrait;
-use Thenbsp\Wechat\Wechat\AccessToken;
+use Shuipf\Wechat\Bridge\Http;
+use Shuipf\Wechat\Bridge\CacheTrait;
+use Shuipf\Wechat\Wechat\AccessToken;
 
 class Ticket
 {
@@ -19,7 +19,7 @@ class Ticket
     const JSAPI_TICKET = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket';
 
     /**
-     * Thenbsp\Wechat\Wechat\AccessToken.
+     * Shuipf\Wechat\Wechat\AccessToken.
      */
     protected $accessToken;
 

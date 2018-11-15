@@ -1,6 +1,6 @@
 <?php
 
-namespace Thenbsp\Wechat\Event;
+namespace Shuipf\Wechat\Event;
 
 interface EventListenerInterface
 {

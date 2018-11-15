@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\Message\Template;
+namespace Shuipf\Wechat\Message\Template;
 
-use Thenbsp\Wechat\Bridge\Http;
-use Thenbsp\Wechat\Wechat\AccessToken;
+use Shuipf\Wechat\Bridge\Http;
+use Shuipf\Wechat\Wechat\AccessToken;
 
 class Sender
 {
@@ -13,7 +13,7 @@ class Sender
     const SENDER = 'https://api.weixin.qq.com/cgi-bin/message/template/send';
 
     /**
-     * Thenbsp\Wechat\Wechat\AccessToken.
+     * Shuipf\Wechat\Wechat\AccessToken.
      */
     protected $accessToken;
 

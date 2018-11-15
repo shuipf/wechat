@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\Payment;
+namespace Shuipf\Wechat\Payment;
 
-use Thenbsp\Wechat\Bridge\Util;
-use Thenbsp\Wechat\Bridge\Http;
+use Shuipf\Wechat\Bridge\Util;
+use Shuipf\Wechat\Bridge\Http;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class Query extends ArrayCollection

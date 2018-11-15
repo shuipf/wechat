@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\Menu;
+namespace Shuipf\Wechat\Menu;
 
-use Thenbsp\Wechat\Bridge\Http;
-use Thenbsp\Wechat\Wechat\AccessToken;
+use Shuipf\Wechat\Bridge\Http;
+use Shuipf\Wechat\Wechat\AccessToken;
 
 class Delete
 {
@@ -13,7 +13,7 @@ class Delete
     const DELETE_URL = 'https://api.weixin.qq.com/cgi-bin/menu/delete';
 
     /**
-     * Thenbsp\Wechat\Wechat\AccessToken.
+     * Shuipf\Wechat\Wechat\AccessToken.
      */
     protected $accessToken;
 

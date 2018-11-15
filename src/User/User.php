@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\User;
+namespace Shuipf\Wechat\User;
 
-use Thenbsp\Wechat\Bridge\Http;
-use Thenbsp\Wechat\Wechat\AccessToken;
+use Shuipf\Wechat\Bridge\Http;
+use Shuipf\Wechat\Wechat\AccessToken;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class User
@@ -24,7 +24,7 @@ class User
     const LISTS = 'https://api.weixin.qq.com/cgi-bin/user/get';
 
     /**
-     * Thenbsp\Wechat\Wechat\AccessToken.
+     * Shuipf\Wechat\Wechat\AccessToken.
      */
     protected $accessToken;
 

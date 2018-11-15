@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\Menu;
+namespace Shuipf\Wechat\Menu;
 
-use Thenbsp\Wechat\Bridge\Http;
-use Thenbsp\Wechat\Wechat\AccessToken;
+use Shuipf\Wechat\Bridge\Http;
+use Shuipf\Wechat\Wechat\AccessToken;
 
 class Create
 {
@@ -18,7 +18,7 @@ class Create
     const MAX_COUNT = 3;
 
     /**
-     * Thenbsp\Wechat\Wechat\AccessToken.
+     * Shuipf\Wechat\Wechat\AccessToken.
      */
     protected $accessToken;
 

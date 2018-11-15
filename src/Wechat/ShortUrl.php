@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\Wechat;
+namespace Shuipf\Wechat\Wechat;
 
-use Thenbsp\Wechat\Bridge\Http;
-use Thenbsp\Wechat\Bridge\CacheTrait;
+use Shuipf\Wechat\Bridge\Http;
+use Shuipf\Wechat\Bridge\CacheTrait;
 
 class ShortUrl
 {
@@ -18,7 +18,7 @@ class ShortUrl
     const SHORT_URL = 'https://api.weixin.qq.com/cgi-bin/shorturl';
 
     /**
-     * Thenbsp\Wechat\Wechat\AccessToken.
+     * Shuipf\Wechat\Wechat\AccessToken.
      */
     protected $accessToken;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\Wechat;
+namespace Shuipf\Wechat\Wechat;
 
-use Thenbsp\Wechat\Bridge\Http;
-use Thenbsp\Wechat\Bridge\CacheTrait;
+use Shuipf\Wechat\Bridge\Http;
+use Shuipf\Wechat\Bridge\CacheTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class AccessToken extends ArrayCollection

@@ -1,8 +1,8 @@
 <?php
 
-namespace Thenbsp\Wechat\Message\Entity;
+namespace Shuipf\Wechat\Message\Entity;
 
-use Thenbsp\Wechat\Message\Entity;
+use Shuipf\Wechat\Message\Entity;
 
 class Image extends Entity
 {

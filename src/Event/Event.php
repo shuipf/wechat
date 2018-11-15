@@ -1,9 +1,9 @@
 <?php
 
-namespace Thenbsp\Wechat\Event;
+namespace Shuipf\Wechat\Event;
 
-use Thenbsp\Wechat\Message\Entity;
-use Thenbsp\Wechat\Bridge\XmlResponse;
+use Shuipf\Wechat\Message\Entity;
+use Shuipf\Wechat\Bridge\XmlResponse;
 use Doctrine\Common\Collections\ArrayCollection;
 
 abstract class Event extends ArrayCollection

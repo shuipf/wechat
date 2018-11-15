@@ -1,6 +1,6 @@
 <?php
 
-namespace Thenbsp\Wechat\Message;
+namespace Shuipf\Wechat\Message;
 
 abstract class Entity
 {
