@@ -21,29 +21,29 @@ interface EventListenerInterface
 
     /**
      * 添加监听
-     * @param $handler
-     * @param callable $callable
+     * @param string $handler 事件类型，类名
+     * @param callable $callable 回调
      * @return $this
      */
     public function addListener($handler, callable $callable);
 
     /**
      * 获取指定监听事件
-     * @param $handler
-     * @return mixed
+     * @param string $handler 事件类型，类名
+     * @return callable 回调
      */
     public function getListener($handler);
 
     /**
      * 判断该监听事件是否存在
-     * @param $handler
+     * @param string $handler 事件类型，类名
      * @return bool
      */
     public function hasListener($handler);
 
     /**
      * 移除监听
-     * @param $handler
+     * @param string $handler 事件类型，类名
      */
     public function removeListener($handler);
 

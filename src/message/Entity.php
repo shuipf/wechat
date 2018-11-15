@@ -19,7 +19,7 @@ abstract class Entity
 
     /**
      * 消息内容
-     * @return mixed
+     * @return array
      */
     abstract public function getBody();
 }

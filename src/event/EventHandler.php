@@ -71,9 +71,14 @@ class EventHandler implements EventHandlerInterface
         //循环处理监听事件
         foreach ($listener->getListeners() as $namespace => $callable) {
             $event = new $namespace($options);
+            //是否是该事件
             if ($event->isValid()) {
-                $listener->trigger($namespace, $event);
-                break;
+                //触发事件
+                $ref = $listener->trigger($namespace, $event);
+                //如果没有返回false，直到遍历全部
+                if (false === $ref) {
+                    break;
+                }
             }
         }
     }

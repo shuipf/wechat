@@ -22,11 +22,13 @@ abstract class Event extends ArrayCollection
     public function setResponse(Entity $entity)
     {
         $body = $entity->getBody();
-        $body['ToUserName'] = $this['FromUserName'];
-        $body['FromUserName'] = $this['ToUserName'];
+        $body['ToUserName'] = $this->get('FromUserName');
+        $body['FromUserName'] = $this->get('ToUserName');
         $body['MsgType'] = $entity->getType();
         $body['CreateTime'] = time();
+        //构造xml资源
         $response = new XmlResponse($body);
+        //输出
         $response->send();
     }
 
