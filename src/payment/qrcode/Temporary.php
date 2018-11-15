@@ -1,6 +1,6 @@
 <?php
 
-namespace shuipf\wechat\payment\Qrcode;
+namespace shuipf\wechat\payment\qrcode;
 
 use shuipf\wechat\payment\Unifiedorder;
 

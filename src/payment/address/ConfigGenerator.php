@@ -1,6 +1,6 @@
 <?php
 
-namespace shuipf\wechat\payment\Address;
+namespace shuipf\wechat\payment\address;
 
 use shuipf\wechat\bridge\Util;
 use shuipf\wechat\bridge\Serializer;

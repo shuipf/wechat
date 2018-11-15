@@ -1,6 +1,6 @@
 <?php
 
-namespace shuipf\wechat\message\Template;
+namespace shuipf\wechat\message\template;
 
 use shuipf\wechat\bridge\Http;
 use shuipf\wechat\wechat\AccessToken;

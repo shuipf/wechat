@@ -1,6 +1,6 @@
 <?php
 
-namespace shuipf\wechat\payment\Coupon;
+namespace shuipf\wechat\payment\coupon;
 
 use shuipf\wechat\bridge\Util;
 use shuipf\wechat\bridge\Http;

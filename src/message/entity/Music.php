@@ -1,6 +1,6 @@
 <?php
 
-namespace shuipf\wechat\message\Entity;
+namespace shuipf\wechat\message\entity;
 
 use shuipf\wechat\message\Entity;
 

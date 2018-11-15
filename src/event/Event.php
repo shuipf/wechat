@@ -2,7 +2,7 @@
 
 namespace shuipf\wechat\event;
 
-use shuipf\wechat\message\Entity;
+use shuipf\wechat\message\entity;
 use shuipf\wechat\bridge\XmlResponse;
 use Doctrine\Common\Collections\ArrayCollection;
 

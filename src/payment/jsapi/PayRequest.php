@@ -1,6 +1,6 @@
 <?php
 
-namespace shuipf\wechat\payment\Jsapi;
+namespace shuipf\wechat\payment\jsapi;
 
 class PayRequest extends ConfigGenerator
 {

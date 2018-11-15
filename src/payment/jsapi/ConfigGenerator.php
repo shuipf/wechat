@@ -1,6 +1,6 @@
 <?php
 
-namespace shuipf\wechat\payment\Jsapi;
+namespace shuipf\wechat\payment\jsapi;
 
 use shuipf\wechat\bridge\Util;
 use shuipf\wechat\bridge\Serializer;

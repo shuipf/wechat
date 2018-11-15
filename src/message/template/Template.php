@@ -1,6 +1,6 @@
 <?php
 
-namespace shuipf\wechat\message\Template;
+namespace shuipf\wechat\message\template;
 
 class Template implements TemplateInterface
 {
