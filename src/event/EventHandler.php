@@ -1,4 +1,11 @@
 <?php
+// +----------------------------------------------------------------------
+// | EventHandler 事件处理器
+// +----------------------------------------------------------------------
+// | Copyright (c) 2019 http://www.shuipf.com, All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: 水平凡 <admin@abc3210.com>
+// +----------------------------------------------------------------------
 
 namespace shuipf\wechat\event;
 
@@ -8,30 +15,36 @@ use Symfony\Component\HttpFoundation\Request;
 class EventHandler implements EventHandlerInterface
 {
     /**
-     * Symfony\Component\HttpFoundation\Request.
+     * 请求对象
+     * @var Request
      */
     protected $request;
 
     /**
-     * initialize request.
+     * 构造函数
+     * EventHandler constructor.
+     * @param Request|null $request 请求对象
      */
     public function __construct(Request $request = null)
     {
         $request = $request ?: Request::createFromGlobals();
-
         $this->setRequest($request);
     }
 
     /**
-     * set from request.
+     * 设置请求对象
+     * @param Request $request
+     * @return $this
      */
     public function setRequest(Request $request)
     {
         $this->request = $request;
+        return $this;
     }
 
     /**
-     * get from rquest.
+     * 获取请求对象
+     * @return Request
      */
     public function getRequest()
     {
@@ -39,22 +52,23 @@ class EventHandler implements EventHandlerInterface
     }
 
     /**
-     * handle event via request.
+     * 请求事件处理
+     * @param EventListenerInterface $listener
      */
     public function handle(EventListenerInterface $listener)
     {
+        //获取事件监听列表
         if (!$listener->getListeners()) {
             return;
         }
-
+        //获取请求内容
         $content = $this->request->getContent();
-
         try {
             $options = Serializer::parse($content);
         } catch (\InvalidArgumentException $e) {
             $options = [];
         }
-
+        //循环处理监听事件
         foreach ($listener->getListeners() as $namespace => $callable) {
             $event = new $namespace($options);
             if ($event->isValid()) {

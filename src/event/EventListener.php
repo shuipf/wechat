@@ -1,16 +1,27 @@
 <?php
+// +----------------------------------------------------------------------
+// | EventListener 监听器
+// +----------------------------------------------------------------------
+// | Copyright (c) 2019 http://www.shuipf.com, All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: 水平凡 <admin@abc3210.com>
+// +----------------------------------------------------------------------
 
 namespace shuipf\wechat\event;
 
 class EventListener implements EventListenerInterface
 {
     /**
-     * list of listeners.
+     * 监听列表
+     * @var array
      */
     protected $listeners = [];
 
     /**
-     * trigger event.
+     * 触发事件
+     * @param $handler
+     * @param Event $event
+     * @return mixed
      */
     public function trigger($handler, Event $event)
     {
@@ -20,26 +31,28 @@ class EventListener implements EventListenerInterface
     }
 
     /**
-     * add listener.
+     * 添加监听
+     * @param $handler
+     * @param callable $callable
+     * @return $this
      */
     public function addListener($handler, callable $callable)
     {
         if (!class_exists($handler)) {
             throw new \InvalidArgumentException(sprintf('Invlaid Handler "%s"', $handler));
         }
-
         if (!is_subclass_of($handler, Event::class)) {
             throw new \InvalidArgumentException(sprintf(
                 'The Handler "%s" must be extends "%s"', $handler, Event::class));
         }
-
         $this->listeners[$handler] = $callable;
-
         return $this;
     }
 
     /**
-     * get listener.
+     * 获取指定监听事件
+     * @param $handler
+     * @return mixed
      */
     public function getListener($handler)
     {
@@ -49,7 +62,9 @@ class EventListener implements EventListenerInterface
     }
 
     /**
-     * has listener.
+     * 判断该监听事件是否存在
+     * @param $handler
+     * @return bool
      */
     public function hasListener($handler)
     {
@@ -57,7 +72,8 @@ class EventListener implements EventListenerInterface
     }
 
     /**
-     * remove listener.
+     * 移除监听
+     * @param $handler
      */
     public function removeListener($handler)
     {
@@ -67,7 +83,8 @@ class EventListener implements EventListenerInterface
     }
 
     /**
-     * get listeners.
+     * 获取监听列表
+     * @return array
      */
     public function getListeners()
     {
