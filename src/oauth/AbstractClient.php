@@ -9,11 +9,14 @@
 
 namespace shuipf\wechat\oauth;
 
+use shuipf\wechat\bridge\CacheTrait;
 use shuipf\wechat\bridge\Util;
 use shuipf\wechat\bridge\Http;
 
 abstract class AbstractClient
 {
+    use CacheTrait;
+
     /**
      * 获取用户临时AccessToken接口地址
      */
@@ -50,12 +53,6 @@ abstract class AbstractClient
     protected $redirectUri;
 
     /**
-     * session
-     * @var StateManager
-     */
-    protected $stateManager;
-
-    /**
      * 构造方法
      * AbstractClient constructor.
      * @param string $appid 公众号 Appid
@@ -65,7 +62,6 @@ abstract class AbstractClient
     {
         $this->appid = $appid;
         $this->appsecret = $appsecret;
-        $this->stateManager = new StateManager();
     }
 
     /**
@@ -110,8 +106,11 @@ abstract class AbstractClient
         if (null === $this->state) {
             $this->state = Util::getRandomString(16);
         }
+        $cacheId = $this->getCacheId();
         //缓存state
-        $this->stateManager->setState($this->state);
+        if ($this->cache) {
+            $this->cache->save($cacheId, $this->state, 600);
+        }
         $query = [
             'appid' => $this->appid,
             'redirect_uri' => $this->redirectUri ?: Util::getCurrentUrl(),
@@ -137,8 +136,12 @@ abstract class AbstractClient
         }
         //验证state
         $state = $state ?: $_GET['state'];
-        if (!$this->stateManager->isValid($state)) {
-            throw new \Exception(sprintf('Invalid Authentication State "%s"', $state));
+        $cacheId = $this->getCacheId();
+        if ($this->cache) {
+            $stateCache = $this->cache->fetch($cacheId);
+            if ($stateCache !== $state) {
+                throw new \Exception(sprintf('Invalid Authentication State "%s"', $state));
+            }
         }
         $query = [
             'appid' => $this->appid,
@@ -168,4 +171,13 @@ abstract class AbstractClient
      * @return string
      */
     abstract public function resolveScope();
+
+    /**
+     * 获取缓存ID
+     * @return string
+     */
+    public function getCacheId()
+    {
+        return sprintf('%s_access_token_state', $this->appid);
+    }
 }

@@ -15,7 +15,7 @@ trait CacheTrait
 {
     /**
      * 缓存对象
-     * Cache
+     * @var Cache
      */
     protected $cache;
 

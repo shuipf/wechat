@@ -40,8 +40,8 @@ class AccessToken extends ArrayCollection
 
     /**
      * 获取 AccessToken，如果有设置缓存则走缓存否则直接请求api
-     * @return string
-     * @throws \Exception
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getTokenString()
     {
@@ -61,7 +61,7 @@ class AccessToken extends ArrayCollection
     /**
      * 通过api获取 access_token
      * @return ArrayCollection|string
-     * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getTokenResponse()
     {

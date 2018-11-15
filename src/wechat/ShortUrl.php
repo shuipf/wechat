@@ -41,7 +41,7 @@ class ShortUrl
      * @param string $longUrl 需要转换的长链接
      * @param int $cacheLifeTime 缓存时间
      * @return mixed
-     * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function toShort($longUrl, $cacheLifeTime = 86400)
     {

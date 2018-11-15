@@ -40,7 +40,7 @@ class ServerIp
      * 获取微信服务器 IP（默认缓存 1 天）
      * @param int $cacheLifeTime 缓存时间
      * @return array
-     * @throws \Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getIps($cacheLifeTime = 86400)
     {
