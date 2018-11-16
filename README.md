@@ -7,7 +7,7 @@
 ### 安装
 
 ```
-composer require thenbsp/wechat
+composer require shuipf/wechat
 ```
 
 ### 文档
