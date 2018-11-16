@@ -12,4 +12,4 @@ composer require shuipf/wechat
 
 ### 文档
 
-文档请移步 [项目 WIKI](https://github.com/shuipf/wechat/wiki) ，使用前建议先看文档！
+文档请移步 [项目 WIKI](https://www.kancloud.cn/shuipf/wechat) ，使用前建议先看文档！
