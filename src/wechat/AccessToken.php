@@ -27,6 +27,12 @@ class AccessToken extends ArrayCollection
     const ACCESS_TOKEN = 'https://api.weixin.qq.com/cgi-bin/token';
 
     /**
+     * 手动设置的access_token，自动获取的会走缓存
+     * @var string
+     */
+    private $accessToken;
+
+    /**
      * 构造方法
      * AccessToken constructor.
      * @param string $appid 第三方用户唯一凭证
@@ -39,12 +45,26 @@ class AccessToken extends ArrayCollection
     }
 
     /**
+     * 手动设置accessToken
+     * @param string $accessToken
+     * @return $this
+     */
+    public function setAccessToken($accessToken)
+    {
+        $this->accessToken = $accessToken;
+        return $this;
+    }
+
+    /**
      * 获取 AccessToken，如果有设置缓存则走缓存否则直接请求api
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getTokenString()
     {
+        if (!empty($this->accessToken)) {
+            return $this->accessToken;
+        }
         $cacheId = $this->getCacheId();
         //从缓存中获取
         if ($this->cache && $data = $this->cache->fetch($cacheId)) {
